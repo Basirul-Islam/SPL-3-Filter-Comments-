@@ -63,7 +63,7 @@ namespace DotNetWithPython.API.Controllers
             psi.FileName = @"C:\Users\cefalo\AppData\Local\Programs\Python\Python39\python.exe";
 
             // 2) Provide script and arguments
-            var script = @"C:\Users\cefalo\source\repos\DotNetWithPython.API\DotNetWithPython.API\DaysBetweenDates.py";
+            var script = @"C:\Users\cefalo\Source\Repos\SPL-3-Filter-Comments-\DotNetWithPython.API\DaysBetweenDates.py";
             var start = "2019-1-1";
             var end = "2019-1-22";
 
