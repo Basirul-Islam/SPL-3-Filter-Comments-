@@ -64,11 +64,12 @@ namespace DotNetWithPython.API.Controllers
 
             // 2) Provide script and arguments
             var script = @"C:\Users\cefalo\Source\Repos\SPL-3-Filter-Comments-\DotNetWithPython.API\DaysBetweenDates.py";
-            var start = "2019-1-1";
-            var end = "2019-1-22";
-
-            psi.Arguments = $"\"{script}\" \"{start}\" \"{end}\"";
-
+            //var start = "2019-1-1";
+            //var end = "2019-1-22";
+            var comment = "you are very  beautiful";
+            //var id = "#4#%435235";
+            //psi.Arguments = $"\"{script}\" \"{comment}\" \"{id}\"";
+            psi.Arguments = $"\"{script}\" \"{comment}\"";
             // 3) Process configuration
             psi.UseShellExecute = false;
             psi.CreateNoWindow = true;
@@ -93,41 +94,41 @@ namespace DotNetWithPython.API.Controllers
             Console.WriteLine(results);
 
 
-            /*// 1) Create engine
-            var engine = Python.CreateEngine();
+            /* // 1) Create engine
+             var engine = Python.CreateEngine();
 
-            // 2) Provide script and arguments
-            var script = @"C:\Users\cefalo\source\repos\DotNetWithPython.API\DotNetWithPython.API\DaysBetweenDates.py";
-            var source = engine.CreateScriptSourceFromFile(script);
+             // 2) Provide script and arguments
+             var script = @"C:\Users\cefalo\Source\Repos\SPL-3-Filter-Comments-\DotNetWithPython.API\DaysBetweenDates.py";
+             var source = engine.CreateScriptSourceFromFile(script);
+             var comment = "you are very  beautiful";
+             var argv = new List<string>();
+             argv.Add("");
+             argv.Add(comment);
+             //argv.Add("2019-1-22");
 
-            var argv = new List<string>();
-            argv.Add("");
-            argv.Add("2019-1-1");
-            argv.Add("2019-1-22");
+             engine.GetSysModule().SetVariable("argv", argv);
 
-            engine.GetSysModule().SetVariable("argv", argv);
+             // 3) Output redirect
+             var eIO = engine.Runtime.IO;
 
-            // 3) Output redirect
-            var eIO = engine.Runtime.IO;
+             var errors = new MemoryStream();
+             eIO.SetErrorOutput(errors, Encoding.Default);
 
-            var errors = new MemoryStream();
-            eIO.SetErrorOutput(errors, Encoding.Default);
+             var results = new MemoryStream();
+             eIO.SetOutput(results, Encoding.Default);
 
-            var results = new MemoryStream();
-            eIO.SetOutput(results, Encoding.Default);
+             // 4) Execute script
+             var scope = engine.CreateScope();
+             source.Execute(scope);
 
-            // 4) Execute script
-            var scope = engine.CreateScope();
-            source.Execute(scope);
+             // 5) Display output
+             string str(byte[] x) => Encoding.Default.GetString(x);
 
-            // 5) Display output
-            string str(byte[] x) => Encoding.Default.GetString(x);
-
-            Console.WriteLine("ERRORS:");
-            Console.WriteLine(str(errors.ToArray()));
-            Console.WriteLine();
-            Console.WriteLine("Results:");
-            Console.WriteLine(str(results.ToArray()));*/
+             Console.WriteLine("ERRORS:");
+             Console.WriteLine(str(errors.ToArray()));
+             Console.WriteLine();
+             Console.WriteLine("Results:");
+             Console.WriteLine(str(results.ToArray()));*/
 
 
 
